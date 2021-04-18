@@ -11,3 +11,7 @@ add_subdirectory(Lib)
 add_executable(copy fileio/copy.c)
 target_link_libraries(copy error_functions)
 target_link_libraries(copy get_num)
+
+add_executable(seek_io fileio/seek_io.c)
+target_link_libraries(seek_io error_functions)
+target_link_libraries(seek_io get_num)
