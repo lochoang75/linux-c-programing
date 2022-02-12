@@ -5,6 +5,8 @@ FLAGS="-Wall"
 copy: get_num.o error_functions.o 
 	${CC} ${FLAGS} -o copy copy.c -I ../lib/ get_num.o error_functions.o
 
+all: copy
+
 get_num.o:
 	${CC} ${FLAGS} -c ../lib/get_num.c
 

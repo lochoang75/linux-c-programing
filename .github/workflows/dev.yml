@@ -1,0 +1,10 @@
+name: Build test source on linux 
+on: [push]
+jobs:
+  build source code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        run: |
+          make all -c ./fileio
