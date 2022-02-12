@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+      - name: Build source
         run: |
           make all -c ./fileio
+          echo "Done"
