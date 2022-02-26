@@ -17,7 +17,10 @@ custom_cp: get_num.o error_functions.o
 seek_append: get_num.o error_functions.o
 	${CC} ${FLAGS} -o seek_append seek_append.c -I ../lib/ get_num.o error_functions.o
 
-all: copy seek_io custom_tee custom_cp seek_append
+atomic_append: get_num.o error_functions.o
+	${CC} ${FLAGS} -o atomic_append atomic_append.c -I ../lib get_num.o error_functions.o
+
+all: copy seek_io custom_tee custom_cp seek_append atomic_append
 
 get_num.o:
 	${CC} ${FLAGS} -c ../lib/get_num.c
@@ -31,5 +34,6 @@ clean:
 	rm -rf custom_tee
 	rm -rf custom_cp
 	rm -rf seek_append
+	rm -rf atomic_append
 	rm -rf get_num.o
 	rm -rf error_functions.o
