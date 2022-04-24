@@ -9,4 +9,6 @@ jobs:
       - name: Build source
         run: |
           make all -C ./fileio
+          make all -C ./advance_topics
+          make all -C ./memalloc
           echo "Done"
