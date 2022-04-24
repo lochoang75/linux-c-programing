@@ -10,5 +10,5 @@ jobs:
         run: |
           make all -C ./fileio
           make all -C ./advance_topics
-          make all -C ./memalloc
+          make all -C ./memmalloc
           echo "Done"
