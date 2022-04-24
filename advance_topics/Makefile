@@ -22,7 +22,7 @@ thread-create2: thread_create2.c
 tsd_app: tsd.c
 	${CC} ${FLAGS} -o tsd_app tsd.c -lpthread -std=c99
 
-all: getopt_long fork fork-exec zombie sigchld thread-create thread_create2 tsd_app
+all: getopt_long fork fork-exec zombie sigchld thread-create thread-create2 tsd_app
 
 clean:
 	rm -rf getopt_long
