@@ -22,7 +22,18 @@ thread-create2: thread_create2.c
 tsd_app: tsd.c
 	${CC} ${FLAGS} -o tsd_app tsd.c -lpthread -std=c99
 
-all: getopt_long fork fork-exec zombie sigchld thread-create thread-create2 tsd_app
+shared_mem: shm.c
+	${CC} ${FLAGS} -o shared_mem shm.c
+
+mmap_write: mmap-write.c
+	${CC} ${FLAGS} -o mmap_write mmap-write.c
+mmap_read: mmap-read.c
+	${CC} ${FLAGS} -o mmap_read mmap-read.c
+
+pipe: pipe.c
+	${CC} ${FLAGS} -o pipe pipe.c
+
+all: getopt_long fork fork-exec zombie sigchld thread-create thread-create2 tsd_app shared_mem mmap_write mmap_read pipe
 
 clean:
 	rm -rf getopt_long
@@ -33,3 +44,7 @@ clean:
 	rm -rf thread-create
 	rm -rf thread-create2
 	rm -rf tsd_app
+	rm -rf shared_mem
+	rm -rf mmap_write
+	rm -rf mmap_read
+	rm -rf pipe
