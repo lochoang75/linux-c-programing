@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <ctype.h>
 #include "tlpi_hdr.h"
+#include "error_functions.h"
 
 #ifndef BUFF_SIZE
 #define BUFF_SIZE 500
@@ -12,7 +13,7 @@ int cp(char *source_file, char *dest_file) {
                                     S_IRGRP | S_IWGRP |
                                     S_IROTH | S_IWOTH);
 
-    int dest_fd = open(source_file, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR |
+    int dest_fd = open(dest_file, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR |
                                     S_IRGRP | S_IWGRP |
                                     S_IROTH | S_IWOTH);
     if (source_fd == -1 || dest_fd == -1) {

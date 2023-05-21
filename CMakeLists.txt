@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.11.0)
+project(linux_programing_interface)
+set(LIB_ERROR_HEADER error_header)
+include_directories(lib/include)
+add_subdirectory(lib)
+add_subdirectory(fileio)
+add_subdirectory(files)

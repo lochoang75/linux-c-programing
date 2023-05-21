@@ -1,0 +1,8 @@
+add_executable(copy copy.c)
+add_executable(seek_io seek_io.c)
+add_executable(tee custom_tee.c)
+add_executable(cp custom_cp.c)
+target_link_libraries(copy PRIVATE ${LIB_ERROR_HEADER})
+target_link_libraries(seek_io ${LIB_ERROR_HEADER})
+target_link_libraries(tee ${LIB_ERROR_HEADER})
+target_link_libraries(cp ${LIB_ERROR_HEADER})

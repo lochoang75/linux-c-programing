@@ -8,7 +8,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Build source
         run: |
-          make all -C ./fileio
-          make all -C ./advance_topics
-          make all -C ./memmalloc
+          mkdir build
+          cd build
+          cmake ..
+          make -j10
           echo "Done"
