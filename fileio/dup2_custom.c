@@ -4,7 +4,6 @@
 
 int main(int argc, char * argv[]) {
     int fd = open("test.txt", O_RDONLY);
-    close(fd);
     printf("old fd is: %d\n", fd);
     int new_fd = fcntl(fd, F_DUPFD, 0);
     printf("new fd is: %d\n", new_fd);
@@ -14,6 +13,7 @@ int main(int argc, char * argv[]) {
             return -1;
         }
     }
+    close(fd);
     close(new_fd);
     return 0;
 }
