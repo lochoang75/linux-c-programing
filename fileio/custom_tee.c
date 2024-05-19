@@ -30,7 +30,7 @@ int main (int argc, char* argv[]) {
         errExit("open");
     }
     while (fgets(buf, 1024, stdin) != NULL) {
-        printf(buf);
+        printf("%s\n", buf);
         if (append_mode){
             lseek(fd, 0, SEEK_END);
         }

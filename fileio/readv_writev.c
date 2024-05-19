@@ -59,7 +59,7 @@ static int _readv(int fd, struct iovec *iov, size_t len)
         int num_byte = read(fd, iov[i].iov_base, iov[i].iov_len);
         if (num_byte < 0)
         {
-            printf("Read buffer error at %d\n", i);
+            printf("Read buffer error at %ld\n", i);
         }
     }
     return 0;
@@ -72,7 +72,7 @@ static int _writev(int fd, struct iovec *iov, size_t len)
         int num_byte = write(fd, iov[i].iov_base, iov[i].iov_len);
         if (num_byte < 0)
         {
-            printf("write buffer error at %d\n", i);
+            printf("write buffer error at %ld\n", i);
         }
     }
 
