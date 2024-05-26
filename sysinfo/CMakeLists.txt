@@ -5,4 +5,4 @@ add_executable(t_uname t_uname.c)
 target_link_libraries(t_uname ${LIB_ERROR_HEADER})
 
 add_executable(proc_listing proc_listing.c)
-target_link_libraries(t_uname ${LIB_ERROR_HEADER})
+target_link_libraries(proc_listing ${LIB_ERROR_HEADER})
